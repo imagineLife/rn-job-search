@@ -10,11 +10,29 @@ const Home = () => {
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
         options={{
+          headerLeft: () => <ScreenHeaderBtn iconUrl={icons.menu} dimensions="60%" />,
+          headerRight: () => <ScreenHeaderBtn iconUrl={icons.profile} dimensions="100%" />,
+          headerShadowVisible: false,
           headerStyle: {
-            backgroundColor: COLORS.lightWhite
-          }
+            backgroundColor: COLORS.lightWhite,
+          },
+          headerTitle: ''
         }}
       />
+
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{
+          flex: 1,
+          padding: SIZES.medium
+        }}>
+
+          <Welcome />
+
+          <Popularjobs />
+          <Nearbyjobs />
+        </View>
+      </ScrollView>
+
     </SafeAreaView>
   );
 };
